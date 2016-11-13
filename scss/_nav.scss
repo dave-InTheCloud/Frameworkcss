@@ -1,0 +1,45 @@
+
+nav.navbar-default {
+  height: $heigthNavLargeAndMedium;
+  width: 100%;
+  background-color: $backgroundColor_nav;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  //default case for flex display
+  // width = space/nbElement
+  ul {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    li {
+      list-style: none;
+      a {
+        color: #563d7c;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $colorLink_nav;
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+
+  ul.left-bar {
+    justify-content: flex-start;
+    padding-left: 1%;
+  }
+  ul.rigth-bar {
+    justify-content: flex-end;
+    padding-right: 1%;
+  }
+
+  ul.center-bar {
+    justify-content: center;
+  }
+
+}
+

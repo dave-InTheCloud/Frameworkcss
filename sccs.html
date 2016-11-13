@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Framework</title>
+    <meta name="description" content="framework">
+    <meta name="author" content="David&Max">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <link rel="stylesheet" href="css/framework.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="ritgth_menu.js"></script>
+
+    <style>
+        .my_size_class {
+        @include grid-off(2, 3, 4);
+        @include grid-col(8, 6, 4);
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar-default">
+    <ul class="left-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="sccs.html">Scss</a></li>
+        <li><a href="#">Git repository</a></li>
+    </ul>
+    <ul class="center-bar">
+    </ul>
+    <ul class="rigth-bar">
+    </ul>
+</nav>
+
+<div class="page-header">
+    <h1>Framework</h1>
+    <h4>Make your design easy</h4>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-s-12 col-md-9">
+            <h1 id="start">Get started with
+                <scss></scss>
+            </h1>
+            <hr>
+            <h3 id="import">Import our scss</h3>
+            <div class="row">
+                <div class="example">
+                    <div>
+                        <p>
+                            If you want to use our framewok with scss version, you just need to import <b>frameworks.scss</b>
+                            file in your scss or css file.
+                            After that you can overwrite propety and redfine our style.
+                            <br><br> We have also some variables than you can redefine but we wil explain after this
+                            topic.
+                        </p>
+                    </div>
+                </div>
+                <div class="code">
+            <pre><code>
+@import '../scss/framework';
+
+body{
+    // YOUR RULES !!!
+}
+            </code></pre>
+                </div>
+            </div>
+
+            <h3 id="var">Customize variables</h3>
+            <div class="row">
+                <div class="example">
+                    <div>
+                        <p>
+                            If you want to modify our style framework we give you <b>_var.scss</b> file where you can
+                            change values as you wish.
+                        </p>
+                    </div>
+                </div>
+                <div class="code">
+            <pre><code>
+/*-----------------------
+         Font
+-----------------------*/
+$font: 'Roboto Condensed', sans-serif;
+$lineHeight: 1.5em;
+$h1: 3rem;
+$h2: 2.5rem;
+$h3: 2rem;
+$h4: 1.75rem;
+$h5: 1.5rem;
+$h6: 1.25rem;
+$fontWeight: 300;
+$font_size_body: 1.05em;
+
+// Have a look to this file to see more
+        </code></pre>
+                </div>
+            </div>
+
+
+            <h1 id="mixin">Mixin</h1>
+            <hr>
+
+            <div class="row">
+                <div class="example">
+                    <div>
+                        <p>
+                            The both of mixin grid-off() and grid-col() are very interresting, they permit you to add
+                            size columns at elements for all screen size.
+
+                            <br>In the example below i define class using the both of mixin to manage alert
+                            size.<br><br>
+
+                            <b>The alert size will be :</b>
+                        <ul>
+                            <li>2 columns offset and 8 columns large for computer screen</li>
+                            <li>3 columns offset and 6 columns large for tablet screen</li>
+                            <li>4 columns offset and 4 columns large for mobile screen</li>
+                        </ul>
+                        <br>
+                        </p>
+
+                        <div class="row">
+                            <div class="alert alert-error  my_size_class align_center">
+                                I have special classes to manage ma width =D
+                                <a href="" class="alert-close" data-dismiss="alert">×</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="code">
+            <pre><code>
+.my_size_class{
+    @include grid-off(2,3,4);
+    @include grid-col(8,6,4);
+}
+
+ //classe added
+&lt;div class="alert alert-error  my_size_class align_center"&gt;
+   ....
+ &lt;a href="" class="alert-close" data-dismiss="alert"&gt;×&lt;a/&gt;
+&lt;/div&gt;
+            </code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 hidden-small" id="summary">
+
+            <h2>Summary</h2>
+            <ul class="none sommaire">
+                <li><a href="#start">Get Started with scss</a></li>
+                <li>
+                    <ul>
+                        <li><a href="#import">Import our scss</a></li>
+                        <li><a href="#var">Customize variables</a></li>
+                    </ul>
+                </li>
+                <li><a href="#mixint">Mixin</a></li>
+                <li>
+                    <ul>
+                        <li><a href="#grid">Grid</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

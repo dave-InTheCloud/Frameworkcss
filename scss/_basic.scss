@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: $lineHeight;
+    font-family: $font;
+    font-size: $font_size_body;
+}
+
+@mixin marginTitle() {
+    margin: .25rem 0 .7rem 0;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-family: $font;
+        font-weight: $fontWeight;
+        @include marginTitle();
+    }
+}
+
+h1 {
+    font-size: $h1;
+    line-height: $h1+0.1rem;
+
+    &.header{
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+h2 {
+    font-size: $h2;
+    line-height: $h2+0.1rem;
+}
+
+h3 {
+    font-size: $h3;
+    line-height: $h3+0.1rem;
+}
+
+h4 {
+    font-size: $h4;
+    line-height: $h4+0.1rem;
+}
+
+h5 {
+    font-size: $h5;
+    line-height: $h5+0.1rem;
+}
+
+h6 {
+    font-size: $h6;
+    line-height: $h6+0.1rem;
+}
+
+p {
+    margin-bottom: 0.5em;
+    font-weight: $fontWeight;
+}
+
+b {
+    font-weight: bold;
+}
+
+i {
+    font-style: italic;
+}
+
+small {
+    font-size: 50%;
+}
+
+hr{
+    border: 0;
+    border-top: 1px solid #ccc;
+    height: 1px;
+    margin: 1em 0;
+}
+
+a {
+    cursor: pointer;
+    color: $link;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $linkHover;
+}
+
+mark,
+del,
+ins,
+u,
+strong,
+em,
+abbr {
+    color: #3498db;
+}
+
+blockquote {
+    margin-left: 15px;
+    padding-left: 40px;
+    padding-bottom: 1em;
+    position: relative;
+    font-weight: $fontWeight;
+
+    &:before {
+        content: "«";
+        font-size: 4em;
+        font-family: $font;
+        position: absolute;
+        left: -10px;
+        top: 0;
+    }
+}
+
+.code {
+    margin-bottom: 1em;
+    padding: 20px 40px;
+    background-color: #333333;
+    color: white;
+}
+
+code {
+    font-family: monospace;
+    overflow: visible;
+}
+
+pre {
+    font-family: "Consolas", "Menlo", "Courier", monospace;
+    overflow: visible;
+}
+
+kbd {
+
+    background-color:#f7f7f7;
+    border:1px solid #ccc;
+    display:inline-block;
+    line-height:1.4;
+    margin:0 .1em;
+    padding:.1em .6em;
+    text-shadow:0 1px 0 #fff;
+}
+
+ul {
+    &.none {
+        li {
+            list-style-type: none;
+        }
+    }
+
+    li {
+        font-weight: $fontWeight;
+        margin-left: 20px;
+        padding-left: 0;
+        list-style-type: disc;
+        &.none {
+            list-style-type: none;
+        }
+        &.square {
+            list-style-type: square;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+    }
+
+}
+
+
+
+.align_right {
+    text-align: right;
+}
+
+.align_left {
+    text-align: left;
+}
+
+.align_center {
+    text-align: center;
+}
+
+.align_justify {
+    text-align: justify;
+}
+
+.upper_case {
+    text-transform: uppercase;
+}
+
+.lower_case {
+    text-transform: lowercase;
+}
+
+.div-center {
+    text-align: center;
+}

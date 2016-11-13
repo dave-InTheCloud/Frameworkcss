@@ -1,0 +1,107 @@
+@mixin span {
+    float: left;
+    margin-left: $gridMargin * 1%;
+    margin-right: $gridMargin * 1%;
+}
+
+@mixin grid-formula($i, $marge) {
+    width: $i * 100px / 12px - $gridMargin * 2 * 1%;
+}
+
+@mixin grid-formula-margin($i, $marge) {
+    margin-left: $i * 100px / 12px + $gridMargin * 1%;
+}
+
+@mixin grid($marginBottomSize) {
+    margin: 0 auto;
+    overflow: hidden;
+
+    @media only screen {
+        [class*="col-s-"] {
+            @include span;
+        }
+
+        @for $i from 1 through 12 {
+            .col-s-#{$i} { @include grid-formula($i, $gridMargin); }
+        }
+
+        @for $i from 1 through 11 {
+            .offset-s-#{$i} { @include grid-formula-margin($i, $gridMargin); }
+        }
+    }
+
+    @media only screen and (min-width: $mediaMedium) {
+        [class*="col-md-"] {
+            @include span;
+        }
+        @for $i from 1 through 12 {
+            .col-md-#{$i} { @include grid-formula($i, $gridMargin); }
+        }
+
+        @for $i from 1 through 11 {
+            .offset-md-#{$i} { @include grid-formula-margin($i, $gridMargin); }
+        }
+    }
+
+    @media only screen and (min-width: $mediaLarge) {
+
+        [class*="col-lg-"] {
+            @include span;
+        }
+        @for $i from 1 through 12 {
+            .col-lg-#{$i} { @include grid-formula($i, $gridMargin); }
+        }
+
+        @for $i from 1 through 11 {
+            .offset-lg-#{$i} { @include grid-formula-margin($i, $gridMargin); }
+        }
+    }
+
+    .row {
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+}
+
+@mixin grid-col($sizeS, $sizeM, $sizeL) {
+    @include span;
+
+    @media only screen and (max-width: $mediaMedium) {
+        @include grid-formula($sizeS, $gridMargin);
+    }
+
+    @media only screen and (min-width: $mediaMedium) and (max-width: $mediaLarge) {
+        @include grid-formula($sizeM, $gridMargin);
+    }
+
+    @media only screen and (min-width: $mediaLarge) {
+        @include grid-formula($sizeL, $gridMargin);
+    }
+}
+
+@mixin grid-off($sizeS, $sizeM, $sizeL) {
+    @include span;
+
+    @media only screen and (max-width: $mediaMedium) {
+        @include grid-formula-margin($sizeS, $gridMargin);
+    }
+
+    @media only screen and (min-width: $mediaMedium) and (max-width: $mediaLarge) {
+        @include grid-formula-margin($sizeM, $gridMargin);
+    }
+
+    @media only screen and (min-width: $mediaLarge) {
+        @include grid-formula-margin($sizeL, $gridMargin);
+    }
+}
+
+.presentation{
+    color: #ffffff;
+    text-align: center;
+    padding-top: 0.8em;
+    background-color: #2075a3;
+    height: 3em;
+    margin-bottom: 1em;
+}

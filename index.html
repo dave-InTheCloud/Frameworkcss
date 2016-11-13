@@ -1,0 +1,691 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Framework</title>
+    <meta name="description" content="framework">
+    <meta name="author" content="David&Max">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <link rel="stylesheet" href="css/framework.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="ritgth_menu.js"></script>
+
+</head>
+
+<body>
+<nav class="navbar-default">
+    <ul class="left-bar">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="sccs.html">Scss</a></li>
+        <li><a href="#">Git repository</a></li>
+    </ul>
+    <ul class="center-bar">
+    </ul>
+    <ul class="rigth-bar">
+    </ul>
+</nav>
+
+<div class="page-header">
+    <h1>Framework</h1>
+    <h4>Make your design easy</h4>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-s-12 col-md-9">
+            <h1 id="start">Get started</h1>
+            <hr>
+
+            <div class="row">
+                <h3 id="head">&lt;head&gt; Marked</h3>
+
+                <div class="example">
+                    <div>
+                        <p>
+                            Before to add our css or sccs version of the framework, you need to implement head marker.
+
+                            <br><br>The code below contains the different important marked :
+                        <ul>
+                            <li>UTF-8 like standard encoding</li>
+                            <li>Compatibility for IE8</li>
+                            <li>Screen size detection (mobile, tablet, ...)</li>
+                            <li>Font import by google</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="code">
+            <pre><code>
+&lt;meta charset="utf-8"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet" type="text/css"&gt;
+
+&lt;!--[if lt IE 9]&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"&gt; &lt;/script&gt;
+&lt;![endif]--&gt;
+            </code></pre>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <br>
+                <h1 id="grid">Grid</h1>
+                <hr>
+                <br>
+
+                <h3 id="elem_siz">Element size</h3>
+                <div class="example">
+
+                    <p>Our framework is compose by a grid of 12 columns. Each element you want to resize need a marked
+                        <b>container</b>.<br/>
+                        No matter the size of the browser, each of these columns will always have an equal width.
+                        You have 3 classes for 3 screens dimension : small, medium and large. <br/>
+                    </p>
+                    <p>Example :</p>
+                    <div class="preview">
+                        <div class="row">
+                            <div class="col-s-6 presentation">col-s-6</div>
+                            <div class="col-s-3 presentation">col-s-3</div>
+                            <div class="col-s-3 presentation">col-s-3</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-s-8 presentation">col-s-8</div>
+                            <div class="col-s-4 presentation">col-s-4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-s-10 presentation">col-s-10</div>
+                            <div class="col-s-2 presentation">col-s-2</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-s-12 presentation">col-s-12</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code">
+            <pre><code>
+&lt;div class="row"&gt;
+    &lt;div class="col-s-6 presentation"&gt;SMALL-6&lt;/div&gt;
+    &lt;div class="col-s-3 presentation"&gt;SMALL-3&lt;/div&gt;
+    &lt;div class="col-s-3 presentation"&gt;SMALL-3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-s--1 presentation"&gt;SMALL-1&lt;/div&gt;
+    &lt;div class="col-s--2 presentation"&gt;SMALL-2&lt;/div&gt;
+    &lt;div class="col-s--9 presentation"&gt;SMALL-9&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-s-12 presentation"&gt;SMALL-12&lt;/div&gt;
+&lt;/div&gt;
+            </code></pre>
+                </div>
+
+
+                <p>Note : If the size classe is not define for a screen size, automatically the lower class (if defined)
+                    will be applied.</p>
+                <div class="example">
+                    <div class="row">
+                        <div class="col-s-12 col-md-6 presentation">col-s-12 col-md-6</div>
+                    </div>
+                </div>
+                <div class="code">
+                    <pre><code>&lt;div class="small-12 medium-6 presentation"&gt;SMALL-12 MEDIUM-6&lt;/div&gt;</code></pre>
+                </div>
+                <p>The element on the top will have a size of 12 columns for the mobile screens, and a size of
+                    6 columns for the computer and tablet screens</p>
+
+            </div>
+
+            <div class="row">
+                <h2 id="offsets">Offsets</h2>
+                <div class="example">
+                    <p>You can add offset, this offset can be define like columns, so for that use <b>offset</b>
+                        classes. In that case also 3 classes exist for each screen size (<b>offset-sm, offset-md,
+                            offset-lg</b>). </p>
+                    <div class="preview">
+                        <div class="row">
+                            <div class="col-md-4 presentation">.col-md-4</div>
+                            <div class="col-md-4 offset-md-4 presentation">.col-md-4 .offset-md-4</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 offset-md-3 presentation">.col-md-3 .offset-md-3</div>
+                            <div class="col-md-3 offset-md-3 presentation">.col-md-3 .offset-md-3</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3 presentation">.col-md-6 .offset-md-3</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code"><pre><code>
+&lt;div class="row"&gt;
+    &lt;div class="col-md-4 presentation"&gt;.col-md-4&lt;/div&gt;
+    &lt;div class="col-md-4 offset-md-4 presentation"&gt;.col-md-4 .offset-md-4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-md-3 offset-md-3 presentation"&gt;.col-md-3 .offset-md-3&lt;/div&gt;
+    &lt;div class="col-md-3 offset-md-3 presentation"&gt;.col-md-3 .offset-md-3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-md-6 offset-md-3 presentation"&gt;.col-md-6 .offset-md-3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+            </div>
+
+
+            <br>
+            <h1 id="typo">Typography</h1>
+            <hr>
+            <br>
+
+            <h2 id="tittle">Title </h2>
+            <div class="row">
+                <div class="example">
+                    <h1>Title h1
+                        <small>small balise Usage</small>
+                    </h1>
+                    <h1 class="sub-title">sub-title class use on tittle </h1>
+                    <h2>Title h2
+                        <small>small balise Usage</small>
+                    </h2>
+                    <h2 class="sub-title">sub-title class use on tittle </h2>
+                    <h3>Title h3
+                        <small>small balise Usage</small>
+                    </h3>
+                    <h3 class="sub-title">sub-title class use on tittle </h3>
+                    <h4>Title h4
+                        <small>small balise Usage</small>
+                    </h4>
+                    <h4 class="sub-title">sub-title class use on tittle </h4>
+                    <h5>Title h5
+                        <small>small balise Usage</small>
+                    </h5>
+                    <h5 class="sub-title">sub-title class use on tittle </h5>
+                    <h6>Title h6
+                        <small>small balise Usage</small>
+                    </h6>
+                    <h6 class="sub-title">sub-title class use on tittle </h6>
+                </div>
+                <div class="code"><pre><code>
+&lt;h1&gt;Title h1 &lt;small&gt;small balise Usage&lt;/small&gt;&lt;/h1&gt;
+&lt;h1 class="sub-title"&gt;sub-title class use on tittle &lt;/h1&gt;
+&lt;h2&gt;Title h2 &lt;small&gt;small balise Usage&lt;/small&gt;&lt;/h2&gt;
+&lt;h2 class="sub-title"&gt;sub-title class use on tittle &lt;/h2&gt;
+&lt;h3&gt;Title h3 &lt;small&gt;small balise Usage&lt;/small&gt;&lt;/h3&gt;
+&lt;h3 class="sub-title"&gt;sub-title class use on tittle &lt;/h3&gt;
+&lt;h4&gt;Title h4 &lt;small&gt;small balise Usage&lt;/small&gt;&lt;/h4&gt;
+&lt;h4 class="sub-title"&gt;sub-title class use on tittle &lt;/h4&gt;
+&lt;h5&gt;Title h5 &lt;small&gt;small balise Usage&lt;/small&gt;&lt;/h5&gt;
+&lt;h5 class="sub-title"&gt;sub-title class use on tittle &lt;/h5&gt;
+&lt;h6&gt;Title h6 &lt;small&gt;small balise Usage&lt;/small&gt;&lt;/h6&gt;
+&lt;h6 class="sub-title"&gt;sub-title class use on tittle &lt;/h6&gt;
+              </code></pre>
+                </div>
+            </div>
+
+            <h2 id="paragraph">Paragraph : </h2>
+            <div class="row">
+                <div class="example">
+                    <p>This is a pargraph !!! <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper, massa eu tincidunt
+                        congue,
+                        tortor felis porta ipsum, at scelerisque risus enim vel sem. Etiam massa est, hendrerit non
+                        magna
+                        non, dictum feugiat nibh.
+                        Fusce tristique sem et vulputate ultricies. Mauris et ex laoreet, molestie arcu faucibus,
+                        volutpat
+                        dolor.
+                        Proin feugiat a velit in ullamcorper. Nulla sit amet dolor hendrerit, semper urna eget, egestas
+                        sem.
+                        Sed quis metus vel elit tempus commodo. Morbi faucibus, leo id mollis pretium, purus arcu mattis
+                        velit, a aliquet est dui id leo.
+                    </p>
+
+                </div>
+                <div class="code"><pre><code>
+&lt;p&gt;This is a pargraph !!! &lt;br&gt;
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper, massa eu tincidunt
+     congue,
+     tortor felis porta ipsum, at scelerisque risus enim vel sem. Etiam massa est, hendrerit non magna
+     non, dictum feugiat nibh.
+     Fusce tristique sem et vulputate ultricies. Mauris et ex laoreet, molestie arcu faucibus,volutpat dolor.
+     Proin feugiat a velit in ullamcorper. Nulla sit amet dolor hendrerit, semper urna eget, egestas sem.
+     Sed quis metus vel elit tempus commodo. Morbi faucibus, leo id mollis pretium, purus arcu mattis velit, a aliquet est dui id leo.
+&lt;/p&gt;
+
+        </code></pre>
+                </div>
+            </div>
+
+            <h2>Stylistic tags : </h2>
+            <div class="row">
+                <div class="example">
+
+                    <mark>Look at me, i am a mark element</mark>
+                    <br>
+                    <del>i del this !!</del>
+                    <br>
+                    I have integred the <abbr>lp ciisi (abbr element)</abbr>!!<br>
+                    <em> Look a at me i am italic (em element)!! </em><br>
+
+
+                    <br/>
+
+                    <kbd>A</kbd>
+                    <kbd>Z</kbd>
+                    <kbd>E</kbd>
+                    <kbd>R</kbd>
+                    <kbd>T</kbd>
+                    <kbd>Y</kbd>
+                </div>
+                <div class="code">
+                    <pre><code>
+&lt;mark&gt;Look at me, i am a mark element&lt;/mark&gt;
+&lt;del>i del this !!&lt;/del&gt;
+
+I have integred the &lt;abbr&gt;lp ciisi (abbr element)&lt;/abbr&gt;!!
+&lt;em&gt; Look a at me i am italic (em element)!! &lt;/em&gt;
+
+&lt;kbd&gt;A&lt;/kbd&gt;
+&lt;kbd&gt;Z&lt;/kbd&gt;
+&lt;kbd&gt;E&lt;/kbd&gt;
+&lt;kbd&gt;R&lt;/kbd&gt;
+&lt;kbd&gt;T&lt;/kbd&gt;
+&lt;kbd&gt;Y&lt;/kbd&gt;
+                    </code></pre>
+                </div>
+            </div>
+
+            <h2 id="lists">Lists</h2>
+            <div class="row">
+                <div class="example">
+                    <div class="preview">
+                        <ul>
+                            <li>Test disc</li>
+                            <li class="square">Test square</li>
+                            <li class="none">Test none</li>
+                            <li class="none">
+                                <ul>
+                                    <li>Test disc</li>
+                                    <li class="square">Test square</li>
+                                    <li class="none">Test none</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="code"><pre><code>
+&lt;ul&gt;
+    &lt;li&gt;Test disc&lt;/li&gt;
+    &lt;li class="square"&gt;Test square&lt;/li&gt;
+    &lt;li class="none"&gt;Test none&lt;/li&gt;
+    &lt;li class="none"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Test disc&lt;/li&gt;
+            &lt;li class="square"&gt;Test square&lt;/li&gt;
+            &lt;li class="none"&gt;Test none&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+        </code></pre>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2 id="alignment">Alignment</h2>
+
+                <div class="example">
+                    <div class="preview">
+                        <p class="align_left">Test left</p>
+                        <p class="align_right">Test right</p>
+                        <p class="align_center">Test center</p>
+                        <p class="align_justify">Justify : Lorem ipsum dolor sit amet, consectetur adipisicing <br/>elit.
+                            Adipisci consequuntur doloremque eveniet excepturi facilis natus necessitatibus nihil
+                            officiis,
+                            praesentium quae quia quis recusandae reiciendis saepe, suscipit temporibus vero vitae
+                            voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At atque
+                            eligendi
+                            incidunt necessitatibus obcaecati. Eum inventore molestiae officia voluptatum? Aut
+                            exercitationem hic incidunt nihil qui quod, ratione repellat similique soluta?</p>
+                    </div>
+                </div>
+                <div class="code"><pre><code>
+&lt;p class="align_left"&gt;Test left&lt;/p&gt;
+&lt;p class="align_right"&gt;Test right&lt;/p&gt;
+&lt;p class="align_center"&gt;Test center&lt;/p&gt;
+&lt;p class="align_justify"&gt;Justify : Lorem ipsum dolor sit amet, consectetur adipisicing ...&lt;/p&gt;
+        </code></pre>
+                </div>
+
+                <div class="row">
+                    <h2 id="transformations">Transformations</h2>
+                    <div class="example">
+                        <div class="preview">
+                            <p class="upper_case">
+                                <span class="upper_case">upper case : Lorem ipsum dolor sit amet, consectetur adipisicing elit. </span>
+
+                            </p>
+                            <p>Lower case : AZERTYUIOP ->
+                                <span class="lower_case">AZERTYUIOP</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="code"><pre><code>
+&lt;p class="upper_case"&gt;
+    &lt;span class="upper_case"&gt;upper case : Lorem ipsum dolor sit amet, consectetur adipisicing elit. &lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;Lower case : AZERTYUIOP -&gt;
+    &lt;span class="lower_case"&gt;AZERTYUIOP&lt;/span&gt;
+&lt;/p&gt;
+                </code></pre>
+                    </div>
+                </div>
+
+                <br>
+                <h1 id="decoration">Decoration</h1>
+                <hr>
+                </br>
+                <div class="row">
+                    <h3 id="jumbotron">Jumbotron</h3>
+
+                    <div class="example">
+                        <div class="jumbotron">
+                            <h1>Hello, world!</h1>
+                            <p>
+                                This is a template for a simple marketing or informational website. It includes a large
+                                callout
+                                called a jumbotron and three supporting pieces of content. Use it as a starting point to
+                                create
+                                something more unique.
+                            </p>
+                            <a class="btn btn-blue btn-lg" href="#">Learn more</a>
+                        </div>
+                    </div>
+                    <div class="code">
+            <pre><code>
+&lt;div class="jumbotron"&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;/div&gt;
+            </code></pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h2 id="table">Table</h2>
+                    <div class="example">
+                        <div class="preview">
+                            <div class="row">
+                                <table class="col-s-12">
+                                    <thead>
+                                    <tr>
+                                        <th>Titre 1</th>
+                                        <th>Titre 2</th>
+                                        <th>Titre 3</th>
+                                        <th>Titre 4</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Contenu 1</td>
+                                        <td>Contenu 1</td>
+                                        <td>Contenu 1</td>
+                                        <td>Contenu 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contenu 2</td>
+                                        <td>Contenu 2</td>
+                                        <td>Contenu 2</td>
+                                        <td>Contenu 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contenu 3</td>
+                                        <td>Contenu 3</td>
+                                        <td>Contenu 3</td>
+                                        <td>Contenu 3</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code"><pre><code>
+&lt;table class="col-s-12"&gt;&lt;/table&gt;
+                </code></pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h2 id="buttons">Buttons</h2>
+                    <div class="example">
+                        <div class="preview">
+                            <div class="row">
+                                <input type="button" disabled="disabled" class="btn raised "
+                                       value="Désactivé"/>
+                                <input type="button" class="btn green raised" value="Small"/>
+                                <input type="button" class="btn light-green btn-lg raised" value="Large"/>
+
+                                <input type="button" class="btn orange raised " value="orange"/>
+                                <input type="button" class="btn btn-fancy light-red raised"
+                                       value="light-red"/>
+                            </div>
+                            <div class="row">
+                                <input type="button" class="btn btn-xlg yellow raised"
+                                       value="Extra Large"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="code"><pre><code>
+&lt;div class="row"&gt;
+  &lt;input type="button" disabled="disabled" class="btn raised" value="Désactivé"&gt;
+  &lt;input type="button" class="btn green raised" value="Small"&gt;
+  &lt;input type="button" class="btn light-green btn-lg raised" value="Large"&gt;
+
+  &lt;input type="button" class="btn orange raised" value="orange"&gt;
+  &lt;input type="button" class="btn btn-fancy light-red raised" value="light-red"&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+  &lt;input type="button" class="btn btn-xlg yellow raised" value="Extra Large"&gt;
+&lt;/div&gt;
+                </code></pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <h2 id="alertes">Alertes</h2>
+                    <div class="example">
+                        <div class="preview">
+                            <div class="row">
+                                <div class="alert alert-error col-s-12">
+                                    <a href="" class="alert-close" data-dismiss="alert">&times;</a>
+                                    Cette alerte annonce l'echec d'une action.
+                                </div>
+
+                                <div class="alert alert-success col-s-12">
+                                    <a href="" class="alert-close" data-dismiss="alert">&times;</a>
+                                    Cette alerte annonce le succès d'une action.
+                                </div>
+
+                                <div class="alert alert-info col-s-12">
+                                    <a href="" class="alert-close" data-dismiss="alert">&times;</a>
+                                    Cette alerte annonce une information
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code"><pre><code>
+&lt;div class="alert alert-error col-s-12"&gt;
+&lt;a href="" class="alert-close" data-dismiss="alert"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="alert alert-success col-s-12"&gt;
+&lt;a href="" class="alert-close" data-dismiss="alert"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;div class="alert alert-info col-s-12"&gt;
+&lt;a href="" class="alert-close" data-dismiss="alert"&gt;&times;&lt;/a&gt;
+&lt;/div&gt;
+                </code></pre>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <br>
+                    <h1 id="navigation">Navigation</h1>
+                    <hr>
+                    </br>
+
+                    <h2 id="nav">nav</h2>
+                    <div class="example">
+                        <div class="preview">
+                            <div class="row">
+                                <nav class="navbar-default">
+                                    <ul class="left-bar">
+                                        <li><a>LinkLeft1</a></li>
+                                        <li><a>LinkLeft2</a></li>
+                                    </ul>
+                                    <ul class="center-bar">
+                                        <li><a>LinkCenter1</a>
+                                    </ul>
+                                    <ul class="rigth-bar">
+                                        <li><a>LinkRigth2</a></li>
+                                        <li><a>LinkRigth3</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code"><pre><code>
+&lt;nav class="navbar-default"&gt;
+  &lt;ul class="left-bar"&gt;
+    &lt;li&gt;&lt;a&gt;LinkLeft1&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a&gt;LinkLeft2&lt;/a&gt;&lt;li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="center-bar"&gt;
+    &lt;li&gt;&lt;a&gt;LinkCenter1&lt;/a&gt;&lt;li&gt;
+  &lt;/ul&gt;
+  &lt;ul class="rigth-bar"&gt;
+    &lt;li&gt;&lt;a&gt;LinkCenter1&lt;/a&gt;&lt;li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+                </code></pre>
+                    </div>
+                </div>
+                <br>
+
+                <div class="row">
+                    <h2 id="pagination">Pagination</h2>
+                    <div class="example">
+                        <div class="preview">
+                            <div class="row">
+                                <div class="col-s-12">
+                                    <nav class="page_navigation">
+                                        <ul class="pagination">
+                                            <li><a href="#" aria-label="Previous"> <span
+                                                    aria-hidden="true">«</span></a>
+                                            </li>
+                                            <li><a href="#">1</a></li>
+                                            <li><a href="#">2</a></li>
+                                            <li><a href="#">3</a></li>
+                                            <li><a href="#">4</a></li>
+                                            <li><a href="#">5</a></li>
+                                            <li><a href="#" aria-label="Next"> <span
+                                                    aria-hidden="true">»</span></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code"><pre><code>
+&lt;nav class="page_navigation"&gt;
+  &lt;ul class="left-bar"&gt;
+    &lt;li&gt;&lt;a href="#" aria-label="Previous"&gt;&lt;span aria-hidden="true"&gt; << &lt;/span&gt;&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;1&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;2&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;3&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;4&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;5&lt;/a&gt;&lt;li&gt;
+    &lt;li&gt;&lt;a href="#" aria-label="Next"&gt;&lt;span aria-hidden="true"&gt; >> &lt;/span&gt;&lt;/a&gt;&lt;li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+                </code></pre>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3 hidden-small" id="summary">
+
+        <h2>Summary</h2>
+        <ul class="none sommaire">
+            <li><a href="#start">Get Started</a></li>
+            <li>
+                <ul>
+                    <li><a href="#head">Balises &lt;head&gt;</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#grid">Grid</a></li>
+            <li>
+                <ul>
+                    <li><a href="#elem_siz">Element sizes</a></li>
+                    <li><a href="#offsets">Offsets</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#typo">Typographie</a></li>
+            <li>
+                <ul>
+                    <li><a href="#tittle">Tittles</a></li>
+                    <li><a href="#paragraph">Paragraphes</a></li>
+                    <li><a href="#lists">Lists</a></li>
+                    <li><a href="#alignment">Alignment</a></li>
+                    <li><a href="#transformations">Transformations</a></li>
+                </ul>
+            </li>
+            <li><a href="#decoration">Decoration</a></li>
+            <li>
+                <ul>
+                    <li><a href="#jumbotron">Jumbotron</a></li>
+                    <li><a href="#table">Table</a></li>
+                    <li><a href="#buttons">Buttons</a></li>
+                    <li><a href="#alertes">Alertes</a></li>
+
+                </ul>
+            </li>
+
+
+            <li><a href="#navigation">Navigation</a></li>
+            <li>
+                <ul>
+                    <li><a href="#nav">Nav</a></li>
+                    <li><a href="#pagination">Pagination</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+    </div>
+</div>
+
+
+</body>
+</html>

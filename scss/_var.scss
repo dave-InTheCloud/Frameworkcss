@@ -1,0 +1,80 @@
+/*-----------------------
+         Font
+-----------------------*/
+$font: 'Roboto Condensed', sans-serif;
+$lineHeight: 1.5em;
+$h1: 3rem;
+$h2: 2.5rem;
+$h3: 2rem;
+$h4: 1.75rem;
+$h5: 1.5rem;
+$h6: 1.25rem;
+$fontWeight: 300;
+$font_size_body: 1.05em;
+
+/*-----------------------
+         Colors
+-----------------------*/
+$lightGreen: #3c763d;
+$green: #26A65B;
+$blue: #4285f4;
+$lightBlue: #31708f;
+$white: #ffffff;
+$red: #CF000F;
+$lightRed: #a94442;
+$yellow: #F4D03F;
+$orange: #f39c12;
+$lighterGray: #F0F0F0;
+$lightGray: #ECECEC;
+$gray: #BDC3C7;
+$darkGray: darken($gray, 8);
+$midnightBlue: #2c3e50;
+
+/*-----------------------
+         Table
+-----------------------*/
+$tableBorder: rgba(200, 200, 200, 0.5);
+$tableBgHover: $lightGray;
+
+/*-----------------------
+         Link
+-----------------------*/
+$link: #4285f4;
+$linkHover: #1746d6;
+
+/*-----------------------
+         Button
+-----------------------*/
+$buttonTextColor: #ffffff;
+$buttonBlue: #4285f4;
+$buttonLightBlue: #03a9f4;
+$buttonDisabled: #EAEAEA;
+$buttonDisabledHover: #E8E8E8;
+$inputDisabled: #EBEBE4;
+
+/*-----------------------
+         Container
+-----------------------*/
+$gridMargin: 1;
+
+/*-----------------------
+         Nav
+-----------------------*/
+$smallSize_nav: 800px;
+$heigthNavLargeAndMedium: 50px;
+$backgroundColor_nav: #efefef;
+$colorLink_nav: #563d7c;
+
+/*-----------------------
+         Media size
+-----------------------*/
+$mediaMedium: 48.1em;
+$mediaLarge: 64em;
+
+/*-----------------------
+   Colors and backgrounds
+-----------------------*/
+@mixin c-color($color) {
+  color: $color;
+}
+

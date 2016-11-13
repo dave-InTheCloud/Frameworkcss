@@ -1,0 +1,122 @@
+@mixin btn-color($color) {
+  background-color: $color;
+  &:hover {
+    background-color: darken($color, 8);
+  }
+}
+
+.btn {
+  color: #ffffff;
+  text-transform: uppercase;
+  height: 2.5em;
+}
+
+input[type=button], input[type=submit], input[type=reset], .btn {
+  background-color: $gray;
+  padding: 0.6em 1em;
+  font-weight: normal;
+  outline: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  color: $buttonTextColor;
+  line-height: 1;
+  text-transform: uppercase;
+  -webkit-transform: translate(0, 0);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  height: auto;
+
+  &.light-grey {
+    color: $darkGray;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: $darkGray;
+  }
+}
+
+//All types of btns / inputs
+.btn {
+
+  font-family: $font;
+  font-size: 1em;
+  line-height: 1.2em;
+
+  &.raised:disabled:hover {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+
+  }
+
+  &.raised:hover {
+    -webkit-transform: translate(0, -1px);
+    transform: translate(0, -1px);
+
+  }
+
+  &.raised:active {
+    -webkit-transform: translate(0, 0px);
+    transform: translate(0, 0px);
+
+    transition: all 0.1s ease-in-out;
+  }
+
+  &.btn-xlg {
+    width: 100%;
+  }
+
+  &.btn-lg {
+    min-width: 12em;
+  }
+
+  &.yellow {
+    @include btn-color($yellow);
+  }
+
+  &.grey {
+    @include btn-color($gray);
+  }
+
+  &.light-grey {
+    @include btn-color($lightGray);
+  }
+
+  &.blue {
+    @include btn-color($blue);
+  }
+
+  &.orange {
+    @include btn-color($orange);
+  }
+
+  &.light-blue {
+    @include btn-color($lightBlue);
+  }
+
+  &.red {
+    @include btn-color($red);
+  }
+
+  &.light-red {
+    @include btn-color($lightRed);
+  }
+
+  &.green {
+    @include btn-color($green);
+  }
+
+  &.light-green {
+    @include btn-color($lightGreen);
+  }
+
+  &:disabled {
+    color: #999999;
+    background-color: #ffffff;
+    &:hover {
+      background-color: inherit;
+      color: #333333;
+    }
+  }
+}

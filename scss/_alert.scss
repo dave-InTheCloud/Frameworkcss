@@ -1,0 +1,40 @@
+.alert {
+    @include grid-col(10,8,8);
+    @include grid-off(1,2,2);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    &.float {
+        position: fixed;
+        top: 10px;
+        z-index: 80;
+    }
+}
+
+.alert-success {
+    background-color: $lightGreen;
+    color: $white;
+}
+
+.alert-info {
+    background-color: $buttonLightBlue;
+    color: $white;
+}
+
+.alert-error {
+    background-color: $lightRed;
+    color: $white;
+}
+
+.alert-close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
